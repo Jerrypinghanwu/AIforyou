@@ -1,0 +1,441 @@
+/* Global Styles */
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.7;
+    color: #4A4A4A; /* Darker gray for better readability */
+    background-color: #FFFFFF; /* Clean white background */
+}
+
+a {
+    text-decoration: none;
+    color: #FF6B6B; /* Vibrant coral for links */
+}
+
+a:hover {
+    color: #EE5253; /* Darker coral on hover */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Header & Navigation */
+header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 10px 5%;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo a {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #333;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    font-size: 1em;
+    color: #555;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: #FF6B6B; /* Vibrant coral for active link */
+    font-weight: bold;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(45deg, #FF9A8B 0%, #FF6A88 50%, #FF99AC 100%); /* Vibrant gradient */
+    color: #fff;
+    text-align: center;
+    padding: 140px 20px;
+    min-height: 75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%); /* Angled bottom */
+}
+
+.hero-content h1 {
+    font-size: 3.8em;
+    margin-bottom: 25px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.hero-content p {
+    font-size: 1.6em;
+    margin-bottom: 35px;
+    max-width: 700px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #FFFFFF; /* White button on gradient */
+    color: #FF6B6B; /* Coral text */
+    padding: 18px 35px;
+    border-radius: 50px; /* Pill shape */
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.cta-button:hover {
+    background-color: #f1f1f1;
+    transform: translateY(-3px) scale(1.05);
+    color: #EE5253;
+}
+
+/* Content Sections */
+.content-section {
+    padding: 80px 5%;
+    text-align: center;
+}
+
+.content-section h2 {
+    font-size: 2.8em;
+    margin-bottom: 50px;
+    color: #333;
+    position: relative;
+    display: inline-block;
+}
+
+.content-section h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 5px;
+    background-color: #FF6B6B; /* Coral accent */
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+.bg-light {
+    background-color: #ffffff;
+}
+
+.bg-dark {
+    background-color: #2c3e50; /* Dark blue-gray */
+    color: #ecf0f1; /* Light gray */
+}
+
+.bg-dark h2 {
+    color: #ecf0f1;
+}
+
+.bg-dark h2::after {
+    background-color: #FFD166; /* Sunny yellow for dark bg accent */
+}
+
+.text-light p,
+.text-light li {
+    color: #bdc3c7; /* Lighter gray for text on dark bg */
+}
+
+/* Course Grid */
+.section-subtitle {
+    font-size: 1.2em;
+    color: #777;
+    margin-top: -30px;
+    margin-bottom: 50px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Slightly larger items */
+    gap: 35px;
+    text-align: left;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.course-item {
+    padding: 35px;
+    border-radius: 12px; /* More rounded corners */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #fff; /* Default text color for items */
+}
+
+.course-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.course-item h3 {
+    font-size: 1.6em;
+    margin-bottom: 15px;
+    /* Color will be set per item */
+}
+
+.course-item p {
+    font-size: 1em;
+    line-height: 1.7;
+}
+
+/* Course Item Specific Backgrounds */
+.course-item-1 {
+    background: linear-gradient(135deg, #FF9A8B 0%, #FF6A88 100%); /* Coral to Pink */
+}
+
+.course-item-2 {
+    background: linear-gradient(135deg, #FFD166 0%, #FFAS8B 100%); /* Yellow to Orange */
+}
+
+.course-item-4 {
+    background: linear-gradient(135deg, #48C6EF 0%, #6F86D6 100%); /* Light Blue to Indigo */
+}
+
+.course-item-6 {
+    background: linear-gradient(135deg, #A0E7E5 0%, #54A0FF 100%); /* Mint to Blue */
+}
+
+/* Instructor Section */
+.instructor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.instructor-item {
+    background-color: #f9f9f9; /* Slightly different from section bg for contrast */
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.instructor-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.instructor-item img {
+    width: 180px; /* Larger image */
+    height: 180px;
+    border-radius: 50%;
+    margin-bottom: 25px;
+    object-fit: cover;
+    border: 5px solid #FF6B6B; /* Coral border */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.instructor-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.instructor-item p {
+    font-size: 0.95em;
+    color: #555;
+}
+
+/* Teaching Method */
+.method-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    text-align: left;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.method-image {
+    flex-shrink: 0;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    max-width: 45%;
+}
+
+.method-text h3 {
+    font-size: 2em;
+    color: #FF6B6B; /* Coral heading */
+    margin-bottom: 20px;
+}
+
+.method-text p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+.method-content ul {
+    list-style: none; /* Remove default bullets */
+    padding-left: 0;
+    margin-top: 20px;
+}
+
+.method-content ul li {
+    margin-bottom: 12px;
+    font-size: 1.05em;
+    display: flex;
+    align-items: center;
+}
+
+.tool-icon {
+    width: 24px; /* Adjust size as needed */
+    height: 24px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+/* Contact Section */
+.contact-info {
+    margin-bottom: 40px;
+    font-size: 1.1em;
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #555; /* Darker border for dark bg */
+    border-radius: 5px;
+    background-color: #34495e; /* Slightly lighter than section bg */
+    color: #ecf0f1;
+    box-sizing: border-box;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #95a5a6; /* Lighter placeholder text */
+}
+
+.contact-form button {
+    width: auto;
+    padding: 12px 25px;
+    background-color: #FFD166; /* Sunny yellow button */
+    color: #2c3e50; /* Dark text on yellow button */
+    border: none;
+    font-weight: bold;
+    border-radius: 50px;
+    padding: 15px 30px;
+}
+
+.contact-form button:hover {
+    background-color: #FFC300; /* Darker yellow */
+    color: #2c3e50;
+    transform: translateY(-2px);
+}
+
+/* Footer */
+footer {
+    background-color: #1c2833; /* Even darker for footer */
+    color: #bdc3c7;
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 0.9em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+    .hero-content p {
+        font-size: 1.2em;
+    }
+    .content-section h2 {
+        font-size: 2.2em;
+    }
+    nav {
+        flex-direction: column;
+    }
+    nav ul {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    nav ul li {
+        margin: 5px 10px;
+    }
+    .method-content {
+        flex-direction: column;
+    }
+    .method-content img {
+        margin-bottom: 20px;
+        max-width: 80%;
+    }
+}
+
+/* Scroll Animation Visibility */
+.course-item,
+.instructor-item,
+.method-content > * {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.course-item.visible,
+.instructor-item.visible,
+.method-content > *.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2em;
+    }
+    .content-section h2 {
+        font-size: 1.8em;
+    }
+    .course-grid,
+    .instructor-grid {
+        grid-template-columns: 1fr;
+    }
+}
