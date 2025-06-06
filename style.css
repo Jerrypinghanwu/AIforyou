@@ -29,8 +29,8 @@
     --course-item-bg-4: linear-gradient(135deg, #FF6B6B 0%, #FF4040 100%); /* Coral Red */
     --course-item-bg-5: linear-gradient(135deg, #9370DB 0%, #8A2BE2 100%); /* Purple */
     --course-item-bg-6: linear-gradient(135deg, #20B2AA 0%, #008B8B 100%); /* Light Sea Green */
-    --course-item-text: #FFFFFF; /* White text for dark backgrounds */
-    --course-item-highlighted-text: #0A2342; /* Dark blue text for yellow background */
+    --course-item-text: #000000; /* Black text */
+    --course-item-highlighted-text: #000000; /* Black text */
 
     --instructor-item-bg: #001E3C; /* Dark Blue variant */
     --instructor-item-border: #FFD700; /* Yellow */
