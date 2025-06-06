@@ -1,20 +1,100 @@
 /* Global Styles */
+:root {
+    --background-color-light: #FFFFFF;
+    --text-color-light: #4A4A4A;
+    --header-bg-light: #ffffff;
+    --header-shadow-light: rgba(0, 0, 0, 0.1);
+    --logo-color-light: #333;
+    --nav-link-color-light: #555;
+    --nav-link-hover-light: #FF6B6B;
+    --hero-bg-light: linear-gradient(135deg, #FF9A8B 0%, #FF6A88 100%);
+    --hero-text-light: white;
+    --cta-bg-light: #FFFFFF;
+    --cta-text-light: #FF6B6B;
+    --cta-hover-bg-light: #f1f1f1;
+    --cta-hover-text-light: #EE5253;
+    --section-title-color-light: #333;
+    --section-title-accent-light: #FF6B6B;
+    --section-subtitle-color-light: #777;
+    --course-item-bg-light-1: linear-gradient(135deg, #FF9A8B 0%, #FF6A88 100%);
+    --course-item-bg-light-2: linear-gradient(135deg, #FFD166 0%, #FFAS8B 100%);
+    --course-item-bg-light-4: linear-gradient(135deg, #48C6EF 0%, #6F86D6 100%);
+    --course-item-bg-light-6: linear-gradient(135deg, #A0E7E5 0%, #54A0FF 100%);
+    --course-item-text-light: #000000; /* Was white, changed to black as per previous request */
+    --instructor-item-bg-light: #f9f9f9;
+    --instructor-item-border-light: #FF6B6B;
+    --instructor-text-color-light: #333;
+    --instructor-subtext-color-light: #555;
+    --method-title-color-light: #FF6B6B;
+    --contact-bg-light: #2c3e50;
+    --contact-text-light: #ecf0f1;
+    --contact-title-accent-light: #FFD166;
+    --contact-input-bg-light: #34495e;
+    --contact-input-border-light: #555;
+    --contact-input-text-light: #ecf0f1;
+    --contact-input-placeholder-light: #95a5a6;
+    --contact-button-bg-light: #FFD166;
+    --contact-button-text-light: #2c3e50;
+    --contact-button-hover-bg-light: #FFC300;
+    --footer-bg-light: #1c2833;
+    --footer-text-light: #bdc3c7;
+
+    --background-color-dark: #1a1a1a;
+    --text-color-dark: #e0e0e0;
+    --header-bg-dark: #2c2c2c;
+    --header-shadow-dark: rgba(255, 255, 255, 0.1);
+    --logo-color-dark: #e0e0e0;
+    --nav-link-color-dark: #cccccc;
+    --nav-link-hover-dark: #FF8A80;
+    --hero-bg-dark: linear-gradient(135deg, #4A00E0 0%, #8E2DE2 100%);
+    --hero-text-dark: #f0f0f0;
+    --cta-bg-dark: #FF8A80;
+    --cta-text-dark: #1a1a1a;
+    --cta-hover-bg-dark: #FF5252;
+    --cta-hover-text-dark: #1a1a1a;
+    --section-title-color-dark: #e0e0e0;
+    --section-title-accent-dark: #FF8A80;
+    --section-subtitle-color-dark: #aaaaaa;
+    --course-item-bg-dark-1: linear-gradient(135deg, #4A00E0 0%, #8E2DE2 100%);
+    --course-item-bg-dark-2: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%);
+    --course-item-bg-dark-4: linear-gradient(135deg, #004e92 0%, #000428 100%);
+    --course-item-bg-dark-6: linear-gradient(135deg, #135058 0%, #05203C 100%);
+    --course-item-text-dark: #e0e0e0;
+    --instructor-item-bg-dark: #2c2c2c;
+    --instructor-item-border-dark: #FF8A80;
+    --instructor-text-color-dark: #e0e0e0;
+    --instructor-subtext-color-dark: #cccccc;
+    --method-title-color-dark: #FF8A80;
+    --contact-bg-dark: #121212;
+    --contact-text-dark: #cccccc;
+    --contact-title-accent-dark: #FFAB40;
+    --contact-input-bg-dark: #252525;
+    --contact-input-border-dark: #777777;
+    --contact-input-text-dark: #cccccc;
+    --contact-input-placeholder-dark: #888888;
+    --contact-button-bg-dark: #FFAB40;
+    --contact-button-text-dark: #121212;
+    --contact-button-hover-bg-dark: #FF8C00;
+    --footer-bg-dark: #0d0d0d;
+    --footer-text-dark: #aaaaaa;
+}
+
 body {
     font-family: 'Noto Sans TC', sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.7;
-    color: #4A4A4A; /* Darker gray for better readability */
-    background-color: #FFFFFF; /* Clean white background */
+    color: var(--text-color-light);
+    background-color: var(--background-color-light);
 }
 
 a {
     text-decoration: none;
-    color: #FF6B6B; /* Vibrant coral for links */
+    color: var(--nav-link-hover-light);
 }
 
 a:hover {
-    color: #EE5253; /* Darker coral on hover */
+    color: var(--cta-hover-text-light);
 }
 
 img {
@@ -31,8 +111,8 @@ img {
 
 /* Header & Navigation */
 header {
-    background-color: #ffffff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: var(--header-bg-light);
+    box-shadow: 0 2px 4px var(--header-shadow-light);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -50,7 +130,7 @@ nav {
 .logo a {
     font-size: 1.8em;
     font-weight: bold;
-    color: #333;
+    color: var(--logo-color-light);
 }
 
 nav ul {
@@ -66,28 +146,24 @@ nav ul li {
 
 nav ul li a {
     font-size: 1em;
-    color: #555;
+    color: var(--nav-link-color-light);
     transition: color 0.3s ease;
 }
 
 nav ul li a:hover,
 nav ul li a.active {
-    color: #FF6B6B; /* Vibrant coral for active link */
+    color: var(--nav-link-hover-light);
     font-weight: bold;
 }
 
 /* Hero Section */
 .hero-section {
-    background: linear-gradient(45deg, #FF9A8B 0%, #FF6A88 50%, #FF99AC 100%); /* Vibrant gradient */
-    color: #fff;
+    background: var(--hero-bg-light);
+    color: var(--hero-text-light);
+    padding: 80px 20px; /* 減少垂直 padding 以縮小高度 */
     text-align: center;
-    padding: 140px 20px;
-    min-height: 75vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%); /* Angled bottom */
+    position: relative;
+    overflow: hidden; /* 確保偽元素不超出範圍 */
 }
 
 .hero-content h1 {
@@ -105,8 +181,8 @@ nav ul li a.active {
 
 .cta-button {
     display: inline-block;
-    background-color: #FFFFFF; /* White button on gradient */
-    color: #FF6B6B; /* Coral text */
+    background-color: var(--cta-bg-light);
+    color: var(--cta-text-light);
     padding: 18px 35px;
     border-radius: 50px; /* Pill shape */
     font-size: 1.2em;
@@ -118,9 +194,9 @@ nav ul li a.active {
 }
 
 .cta-button:hover {
-    background-color: #f1f1f1;
+    background-color: var(--cta-hover-bg-light);
     transform: translateY(-3px) scale(1.05);
-    color: #EE5253;
+    color: var(--cta-hover-text-light);
 }
 
 /* Content Sections */
@@ -132,7 +208,7 @@ nav ul li a.active {
 .content-section h2 {
     font-size: 2.8em;
     margin-bottom: 50px;
-    color: #333;
+    color: var(--section-title-color-light);
     position: relative;
     display: inline-block;
 }
@@ -142,37 +218,37 @@ nav ul li a.active {
     display: block;
     width: 80px;
     height: 5px;
-    background-color: #FF6B6B; /* Coral accent */
+    background-color: var(--section-title-accent-light);
     margin: 15px auto 0;
     border-radius: 2px;
 }
 
 .bg-light {
-    background-color: #ffffff;
+    /* This class might become redundant if body bg is already light */
 }
 
 .bg-dark {
-    background-color: #2c3e50; /* Dark blue-gray */
-    color: #ecf0f1; /* Light gray */
+    background-color: var(--contact-bg-light);
+    color: var(--contact-text-light);
 }
 
 .bg-dark h2 {
-    color: #ecf0f1;
+    color: var(--contact-text-light);
 }
 
 .bg-dark h2::after {
-    background-color: #FFD166; /* Sunny yellow for dark bg accent */
+    background-color: var(--contact-title-accent-light);
 }
 
 .text-light p,
 .text-light li {
-    color: #bdc3c7; /* Lighter gray for text on dark bg */
+    /* This class might become redundant */
 }
 
 /* Course Grid */
 .section-subtitle {
     font-size: 1.2em;
-    color: #777;
+    color: var(--section-subtitle-color-light);
     margin-top: -30px;
     margin-bottom: 50px;
     max-width: 800px;
@@ -194,7 +270,7 @@ nav ul li a.active {
     border-radius: 12px; /* More rounded corners */
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    color: #fff; /* Default text color for items */
+    /* color: #fff; Default text color for items - now black */
 }
 
 .course-item:hover {
@@ -203,31 +279,31 @@ nav ul li a.active {
 }
 
 .course-item h3 {
-    font-size: 1.6em;
-    margin-bottom: 15px;
-    /* Color will be set per item */
+    margin-top: 0;
+    color: var(--course-item-text-light);
 }
 
 .course-item p {
-    font-size: 1em;
-    line-height: 1.7;
+    font-size: 0.9em;
+    line-height: 1.6;
+    color: var(--course-item-text-light);
 }
 
 /* Course Item Specific Backgrounds */
 .course-item-1 {
-    background: linear-gradient(135deg, #FF9A8B 0%, #FF6A88 100%); /* Coral to Pink */
+    background: var(--course-item-bg-light-1);
 }
 
 .course-item-2 {
-    background: linear-gradient(135deg, #FFD166 0%, #FFAS8B 100%); /* Yellow to Orange */
+    background: var(--course-item-bg-light-2);
 }
 
 .course-item-4 {
-    background: linear-gradient(135deg, #48C6EF 0%, #6F86D6 100%); /* Light Blue to Indigo */
+    background: var(--course-item-bg-light-4);
 }
 
 .course-item-6 {
-    background: linear-gradient(135deg, #A0E7E5 0%, #54A0FF 100%); /* Mint to Blue */
+    background: var(--course-item-bg-light-6);
 }
 
 /* Instructor Section */
@@ -240,7 +316,7 @@ nav ul li a.active {
 }
 
 .instructor-item {
-    background-color: #f9f9f9; /* Slightly different from section bg for contrast */
+    background-color: var(--instructor-item-bg-light);
     padding: 25px;
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
@@ -258,19 +334,19 @@ nav ul li a.active {
     border-radius: 50%;
     margin-bottom: 25px;
     object-fit: cover;
-    border: 5px solid #FF6B6B; /* Coral border */
+    border: 5px solid var(--instructor-item-border-light);
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .instructor-item h3 {
     font-size: 1.5em;
     margin-bottom: 10px;
-    color: #333;
+    color: var(--instructor-text-color-light);
 }
 
 .instructor-item p {
     font-size: 0.95em;
-    color: #555;
+    color: var(--instructor-subtext-color-light);
 }
 
 /* Teaching Method */
@@ -292,7 +368,7 @@ nav ul li a.active {
 
 .method-text h3 {
     font-size: 2em;
-    color: #FF6B6B; /* Coral heading */
+    color: var(--method-title-color-light);
     margin-bottom: 20px;
 }
 
@@ -342,23 +418,23 @@ nav ul li a.active {
     width: 100%;
     padding: 12px;
     margin-bottom: 15px;
-    border: 1px solid #555; /* Darker border for dark bg */
+    border: 1px solid var(--contact-input-border-light);
     border-radius: 5px;
-    background-color: #34495e; /* Slightly lighter than section bg */
-    color: #ecf0f1;
+    background-color: var(--contact-input-bg-light);
+    color: var(--contact-input-text-light);
     box-sizing: border-box;
 }
 
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
-    color: #95a5a6; /* Lighter placeholder text */
+    color: var(--contact-input-placeholder-light);
 }
 
 .contact-form button {
     width: auto;
     padding: 12px 25px;
-    background-color: #FFD166; /* Sunny yellow button */
-    color: #2c3e50; /* Dark text on yellow button */
+    background-color: var(--contact-button-bg-light);
+    color: var(--contact-button-text-light);
     border: none;
     font-weight: bold;
     border-radius: 50px;
@@ -366,48 +442,221 @@ nav ul li a.active {
 }
 
 .contact-form button:hover {
-    background-color: #FFC300; /* Darker yellow */
-    color: #2c3e50;
+    background-color: var(--contact-button-hover-bg-light);
+    color: var(--contact-button-text-light);
     transform: translateY(-2px);
 }
 
 /* Footer */
 footer {
-    background-color: #1c2833; /* Even darker for footer */
-    color: #bdc3c7;
+    background-color: var(--footer-bg-light);
+    color: var(--footer-text-light);
     text-align: center;
     padding: 30px 20px;
     font-size: 0.9em;
 }
 
+/* Add more specific styles as needed */
+
+/* Lazy Load Image Styles */
+img.lazy-load {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    min-height: 100px; /* Placeholder height, adjust as needed */
+    background-color: #f0f0f0; /* Light gray placeholder background */
+}
+
+img:not(.lazy-load) {
+    opacity: 1;
+}
+
+/* Theme Toggle Button */
+#theme-toggle {
+    background: none;
+    border: none;
+    color: var(--logo-color-light); /* Use logo color for consistency */
+    font-size: 1.5em;
+    cursor: pointer;
+    padding: 5px;
+    margin-left: 15px; /* Add some space from nav links */
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: var(--background-color-dark);
+    color: var(--text-color-dark);
+}
+
+body.dark-mode header {
+    background-color: var(--header-bg-dark);
+    box-shadow: 0 2px 4px var(--header-shadow-dark);
+}
+
+body.dark-mode .logo a {
+    color: var(--logo-color-dark);
+}
+
+body.dark-mode nav ul li a {
+    color: var(--nav-link-color-dark);
+}
+
+body.dark-mode nav ul li a:hover,
+body.dark-mode nav ul li a.active {
+    color: var(--nav-link-hover-dark);
+}
+
+body.dark-mode .hero-section {
+    background: var(--hero-bg-dark);
+    color: var(--hero-text-dark);
+}
+
+body.dark-mode .cta-button {
+    background-color: var(--cta-bg-dark);
+    color: var(--cta-text-dark);
+}
+
+body.dark-mode .cta-button:hover {
+    background-color: var(--cta-hover-bg-dark);
+    color: var(--cta-hover-text-dark);
+}
+
+body.dark-mode .content-section h2 {
+    color: var(--section-title-color-dark);
+}
+
+body.dark-mode .content-section h2::after {
+    background-color: var(--section-title-accent-dark);
+}
+
+body.dark-mode .section-subtitle {
+    color: var(--section-subtitle-color-dark);
+}
+
+body.dark-mode .course-item {
+    color: var(--course-item-text-dark);
+}
+
+body.dark-mode .course-item h3,
+body.dark-mode .course-item p {
+    color: var(--course-item-text-dark);
+}
+
+body.dark-mode .course-item-1 { background: var(--course-item-bg-dark-1); }
+body.dark-mode .course-item-2 { background: var(--course-item-bg-dark-2); }
+/* Assuming course-item-3, 5 use default or need specific dark versions */
+body.dark-mode .course-item-4 { background: var(--course-item-bg-dark-4); }
+body.dark-mode .course-item-6 { background: var(--course-item-bg-dark-6); }
+
+body.dark-mode .instructor-item {
+    background-color: var(--instructor-item-bg-dark);
+}
+
+body.dark-mode .instructor-item img {
+    border-color: var(--instructor-item-border-dark);
+}
+
+body.dark-mode .instructor-item h3 {
+    color: var(--instructor-text-color-dark);
+}
+
+body.dark-mode .instructor-item p {
+    color: var(--instructor-subtext-color-dark);
+}
+
+body.dark-mode .method-text h3 {
+    color: var(--method-title-color-dark);
+}
+
+body.dark-mode .bg-dark, /* This selector targets the contact section in current HTML */
+body.dark-mode .contact-section /* If you add a class specifically for contact */ {
+    background-color: var(--contact-bg-dark);
+    color: var(--contact-text-dark);
+}
+
+body.dark-mode .bg-dark h2, /* Contact section h2 */
+body.dark-mode .contact-section h2 {
+    color: var(--contact-text-dark);
+}
+
+body.dark-mode .bg-dark h2::after, /* Contact section h2 accent */
+body.dark-mode .contact-section h2::after {
+    background-color: var(--contact-title-accent-dark);
+}
+
+body.dark-mode .contact-form input,
+body.dark-mode .contact-form textarea {
+    background-color: var(--contact-input-bg-dark);
+    border-color: var(--contact-input-border-dark);
+    color: var(--contact-input-text-dark);
+}
+
+body.dark-mode .contact-form input::placeholder,
+body.dark-mode .contact-form textarea::placeholder {
+    color: var(--contact-input-placeholder-dark);
+}
+
+body.dark-mode .contact-form button {
+    background-color: var(--contact-button-bg-dark);
+    color: var(--contact-button-text-dark);
+}
+
+body.dark-mode .contact-form button:hover {
+    background-color: var(--contact-button-hover-bg-dark);
+}
+
+body.dark-mode footer {
+    background-color: var(--footer-bg-dark);
+    color: var(--footer-text-dark);
+}
+
+body.dark-mode #theme-toggle {
+    color: var(--logo-color-dark);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+        display: none; /* Initially hide for hamburger menu, if implemented */
+    }
+
+    header nav ul.active {
+        display: flex; /* Show when active */
+    }
+
+    header nav ul li {
+        margin: 10px 0;
+    }
+
+    .hero-section {
+        padding: 60px 20px;
+    }
+
     .hero-content h1 {
         font-size: 2.5em;
     }
-    .hero-content p {
-        font-size: 1.2em;
+
+    .course-grid {
+        grid-template-columns: 1fr;
     }
-    .content-section h2 {
-        font-size: 2.2em;
+
+    .instructor-grid {
+        grid-template-columns: 1fr;
     }
-    nav {
-        flex-direction: column;
-    }
-    nav ul {
-        margin-top: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    nav ul li {
-        margin: 5px 10px;
-    }
+
     .method-content {
         flex-direction: column;
     }
-    .method-content img {
-        margin-bottom: 20px;
-        max-width: 80%;
+
+    .method-image {
+        margin-top: 20px;
+        max-width: 100%;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        width: calc(100% - 22px); /* Adjust for padding/border */
     }
 }
 

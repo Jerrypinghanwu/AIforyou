@@ -2,17 +2,44 @@
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-
         const targetId = this.getAttribute('href');
         const targetElement = document.querySelector(targetId);
-
         if (targetElement) {
-            targetElement.scrollIntoView({
-                behavior: 'smooth'
-            });
+            targetElement.scrollIntoView({ behavior: 'smooth' });
         }
     });
 });
+
+// Theme toggle functionality
+const themeToggleBtn = document.getElementById('theme-toggle');
+const pageBody = document.body;
+
+function applyTheme(theme) {
+    if (!pageBody || !themeToggleBtn) {
+        // console.warn("Theme toggle button or body not found for applyTheme.");
+        return;
+    }
+
+    if (theme === 'dark') {
+        pageBody.classList.add('dark-mode');
+        themeToggleBtn.textContent = '☀️'; // Sun icon for light mode
+        localStorage.setItem('theme', 'dark');
+    } else {
+        pageBody.classList.remove('dark-mode');
+        themeToggleBtn.textContent = '🌙'; // Moon icon for dark mode
+        localStorage.setItem('theme', 'light');
+    }
+}
+
+if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', () => {
+        if (pageBody.classList.contains('dark-mode')) {
+            applyTheme('light');
+        } else {
+            applyTheme('dark');
+        }
+    });
+}
 
 // Active navigation link highlighting on scroll
 const sections = document.querySelectorAll('section[id]');
@@ -41,33 +68,31 @@ const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
-        // In a real application, you would send this data to a server
         alert('感謝您的訊息！我們會盡快與您聯繫。');
-        this.reset(); // Reset form fields
+        this.reset();
     });
 }
 
 // Optional: Add a subtle animation to elements on scroll
 const observerOptions = {
-    root: null, // relative to document viewport 
+    root: null,
     rootMargin: '0px',
-    threshold: 0.1 // 10% of item is visible
+    threshold: 0.1
 };
 
-const observerCallback = (entries, observer) => {
+const observerCallback = (entries, observerInstance) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
-            observer.unobserve(entry.target); // Optional: stop observing once animated
+            observerInstance.unobserve(entry.target);
         }
     });
 };
 
-const observer = new IntersectionObserver(observerCallback, observerOptions);
+const scrollObserver = new IntersectionObserver(observerCallback, observerOptions);
 
-// Apply to elements you want to animate
 document.querySelectorAll('.course-item, .instructor-item, .method-content > *').forEach(el => {
-    observer.observe(el);
+    scrollObserver.observe(el);
 });
 
 // Add a CSS class for the animation (can be in style.css)
@@ -77,14 +102,35 @@ document.querySelectorAll('.course-item, .instructor-item, .method-content > *')
     transform: translateY(20px);
     transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
-
-.course-item.visible, 
-.instructor-item.visible, 
+.course-item.visible,
+.instructor-item.visible,
 .method-content > *.visible {
     opacity: 1;
     transform: translateY(0);
 }
 */
-// Note: The CSS for the 'visible' class should be in style.css for better organization.
-// I'll add it there in the next step if you'd like, or you can add it manually.
-// For now, this JS sets up the observation.
+
+// DOMContentLoaded for initializations
+document.addEventListener('DOMContentLoaded', () => {
+    // Initial theme setup
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    applyTheme(savedTheme); // applyTheme uses global themeToggleBtn and pageBody, and has null checks.
+
+    // Lazy loading for images
+    let lazyloadImages = document.querySelectorAll("img.lazy-load");
+    if (lazyloadImages.length > 0) {
+        let imageObserver = new IntersectionObserver(function(entries, imgObserver) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    let image = entry.target;
+                    image.src = image.dataset.src;
+                    image.classList.remove("lazy-load");
+                    imgObserver.unobserve(image);
+                }
+            });
+        });
+        lazyloadImages.forEach(function(image) {
+            imageObserver.observe(image);
+        });
+    }
+});

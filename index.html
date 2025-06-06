@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <nav>
+        <nav aria-label="主要導覽">
             <div class="logo">
                 <a href="#hero">AI 課程專家</a>
             </div>
@@ -19,20 +19,21 @@
                 <li><a href="#teaching-method">上課方式</a></li>
                 <li><a href="#contact">聯絡我們</a></li>
             </ul>
+            <button id="theme-toggle" aria-label="切換色彩模式">🌙</button>
         </nav>
     </header>
 
     <main>
-        <section id="hero" class="hero-section">
+        <section id="hero" class="hero-section" aria-labelledby="hero-title">
             <div class="hero-content">
-                <h1>探索人工智慧的無限可能</h1>
+                <h1 id="hero-title">探索人工智慧的無限可能</h1>
                 <p>加入我們的專業線上課程，開啟您的 AI 學習之旅。</p>
                 <a href="#course-content" class="cta-button">了解更多課程</a>
             </div>
         </section>
 
-手機上看        <section id="course-content" class="content-section">
-手機上看            <h2>我們的AI專業課程</h2>
+        <section id="course-content" class="content-section" aria-labelledby="course-content-title">
+            <h2 id="course-content-title">我們的AI專業課程</h2>
             <p class="section-subtitle">精選核心課程，從入門到進階，助您掌握未來關鍵技術。</p>
             <div class="course-grid">
                 <div class="course-item course-item-1">
@@ -43,9 +44,17 @@
                     <h3>後端工程師養成班</h3>
                     <p>深入資料庫設計、API 架構與伺服器端邏輯，建構高效能、可擴展的後台系統。</p>
                 </div>
+                <div class="course-item course-item-3">
+                    <h3>AI 影像辨識應用班</h3>
+                    <p>探索電腦視覺技術，學習影像處理、物件偵測與人臉辨識等 AI 應用。</p>
+                </div>
                 <div class="course-item course-item-4">
                     <h3>零基礎 AI 入門班</h3>
                     <p>友善初學者與長者，無需技術背景也能輕鬆理解 AI 核心概念與實際應用。</p>
+                </div>
+                <div class="course-item course-item-5">
+                    <h3>自然語言處理實戰</h3>
+                    <p>掌握文本分析、情感判斷、機器翻譯等 NLP核心技術，開發智能聊天機械人。</p>
                 </div>
                 <div class="course-item course-item-6">
                     <h3>AI 專題實作與部署</h3>
@@ -54,30 +63,30 @@
             </div>
         </section>
 
-        <section id="instructors" class="content-section bg-light">
-            <h2>我們的專業師資</h2>
+        <section id="instructors" class="content-section bg-light" aria-labelledby="instructors-title">
+            <h2 id="instructors-title">我們的專業師資</h2>
             <p class="section-subtitle">由業界經驗豐富的專家親自授課，理論與實務並重。</p>
             <div class="instructor-grid">
                 <div class="instructor-item">
-                    <img src="https://via.placeholder.com/200x200/3498db/ffffff?text=Jerry+W." alt="講師 Jerry W.">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="https://via.placeholder.com/200x200/3498db/ffffff?text=Jerry+W." alt="講師 Jerry W." class="lazy-load">
                     <h3>吳秉翰 (Jerry)</h3>
                     <p>共同創辦人，負責專案管理、課程規劃與教學進程控制，具備豐富教學經驗。</p>
                 </div>
                 <div class="instructor-item">
-                    <img src="https://via.placeholder.com/200x200/e74c3c/ffffff?text=Partner+L." alt="講師 Partner L.">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="https://via.placeholder.com/200x200/e74c3c/ffffff?text=Partner+L." alt="講師 Partner L." class="lazy-load">
                     <h3>教學合夥人</h3>
                     <p>AI 技術專家，負責課程教學、內容設計與學生學習輔導，深耕 AI 研究領域。</p>
                 </div>
                 <div class="instructor-item">
-                    <img src="https://via.placeholder.com/200x200/2ecc71/ffffff?text=Guest+AI+Pro" alt="客座講師">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="https://via.placeholder.com/200x200/2ecc71/ffffff?text=Guest+AI+Pro" alt="客座講師" class="lazy-load">
                     <h3>客座講師群</h3>
                     <p>不定期邀請業界頂尖 AI 專家進行分享與指導，拓展學員視野。</p>
                 </div>
             </div>
         </section>
 
-        <section id="teaching-method" class="content-section">
-            <h2>靈活的線上學習體驗</h2>
+        <section id="teaching-method" class="content-section" aria-labelledby="teaching-method-title">
+            <h2 id="teaching-method-title">靈活的線上學習體驗</h2>
             <p class="section-subtitle">我們採用主流視訊軟體，提供高品質的互動式線上課程。</p>
             <div class="method-content">
                 <div class="method-text">
@@ -90,12 +99,12 @@
                         <li>活躍的學員社群與專責助教支持</li>
                     </ul>
                 </div>
-                <img src="https://via.placeholder.com/450x300/5dade2/FFFFFF?text=多元線上互動學習" alt="線上互動學習" class="method-image">
+                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="https://via.placeholder.com/450x300/5dade2/FFFFFF?text=多元線上互動學習" alt="線上互動學習" class="method-image lazy-load">
             </div>
         </section>
 
-        <section id="contact" class="content-section bg-dark text-light">
-            <h2>聯絡我們</h2>
+        <section id="contact" class="content-section bg-dark text-light" aria-labelledby="contact-title">
+            <h2 id="contact-title">聯絡我們</h2>
             <p>有任何問題或想進一步了解課程嗎？歡迎隨時與我們聯繫！</p>
             <div class="contact-info">
                 <p><strong>辦公室電話：</strong> (07) 123-4567 (此為範例)</p>
