@@ -73,7 +73,9 @@ if (contactForm) {
     });
 }
 
-// Optional: Add a subtle animation to elements on scroll
+// IntersectionObserver for scroll animations
+// This observer adds a 'visible' class to elements when they enter the viewport,
+// triggering a CSS animation defined in style.css.
 const observerOptions = {
     root: null,
     rootMargin: '0px',
@@ -116,21 +118,39 @@ document.addEventListener('DOMContentLoaded', () => {
     const savedTheme = localStorage.getItem('theme') || 'light';
     applyTheme(savedTheme); // applyTheme uses global themeToggleBtn and pageBody, and has null checks.
 
-    // Lazy loading for images
-    let lazyloadImages = document.querySelectorAll("img.lazy-load");
+    // IntersectionObserver for Lazy Loading Images (enhanced)
+    // This observer dynamically loads images with the 'lazy-load' class and a 'data-src' attribute
+    // when they are about to enter the viewport. The native `loading="lazy"` attribute is also used
+    // for browsers that support it, providing a fallback and progressive enhancement.
+    let lazyloadImages = document.querySelectorAll("img.lazy-load[data-src]");
     if (lazyloadImages.length > 0) {
-        let imageObserver = new IntersectionObserver(function(entries, imgObserver) {
-            entries.forEach(function(entry) {
-                if (entry.isIntersecting) {
-                    let image = entry.target;
-                    image.src = image.dataset.src;
-                    image.classList.remove("lazy-load");
-                    imgObserver.unobserve(image);
-                }
+        if ('IntersectionObserver' in window) {
+            let imageObserver = new IntersectionObserver(function(entries, imgObserver) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        let image = entry.target;
+                        if (image.dataset.src) {
+                            image.src = image.dataset.src;
+                            image.removeAttribute('data-src'); // Clean up
+                        }
+                        image.classList.remove("lazy-load");
+                        imgObserver.unobserve(image);
+                    }
+                });
             });
-        });
-        lazyloadImages.forEach(function(image) {
-            imageObserver.observe(image);
-        });
+            lazyloadImages.forEach(function(image) {
+                imageObserver.observe(image);
+            });
+        } else {
+            // Fallback for browsers that don't support IntersectionObserver
+            // Native lazy loading should still work if supported, otherwise images load normally.
+            lazyloadImages.forEach(function(image) {
+                if (image.dataset.src) {
+                    image.src = image.dataset.src;
+                    image.removeAttribute('data-src');
+                }
+                image.classList.remove("lazy-load");
+            });
+        }
     }
 });
