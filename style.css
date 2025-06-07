@@ -69,7 +69,7 @@ a {
 }
 
 a:hover {
-    color: var(--cta-hover-text); /* Consider a more general hover color or keep specific */
+    color: var(--cta-hover-text);
 }
 
 img {
@@ -135,10 +135,10 @@ nav ul li a.active {
 .hero-section {
     background: var(--hero-bg);
     color: var(--hero-text);
-    padding: 80px 20px; /* 減少垂直 padding 以縮小高度 */
+    padding: 80px 20px;
     text-align: center;
     position: relative;
-    overflow: hidden; /* 確保偽元素不超出範圍 */
+    overflow: hidden;
 }
 
 .hero-content h1 {
@@ -152,9 +152,9 @@ nav ul li a.active {
     font-size: 1.6em;
     margin-bottom: 35px;
     max-width: 700px;
-    margin-left: auto; /* Center the paragraph */
-    margin-right: auto; /* Center the paragraph */
-    color: var(--hero-text); /* Ensure hero paragraph text uses hero-text color */
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--hero-text);
 }
 
 .cta-button {
@@ -162,7 +162,7 @@ nav ul li a.active {
     background-color: var(--cta-bg);
     color: var(--cta-text);
     padding: 18px 35px;
-    border-radius: 50px; /* Pill shape */
+    border-radius: 50px;
     font-size: 1.2em;
     font-weight: bold;
     transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
@@ -191,112 +191,31 @@ nav ul li a.active {
     display: inline-block;
 }
 
-.content-section h2::after, #contact h2::after {
+.content-section h2::after {
     content: '';
     display: block;
     width: 80px;
     height: 5px;
     background-color: var(--section-title-accent);
-    margin: 15px auto 0; /* Ensure this is centered */
+    margin: 15px auto 0;
     border-radius: 2px;
 }
 
-.bg-light { /* This class will be effectively unused with single theme */
-    /* background-color: var(--background-color); */ /* No longer needed */
-}
-
-.bg-dark { /* This class will now define the contact section's specific dark blue */
-    background-color: var(--contact-bg);
-    color: var(--contact-text);
-}
-
-.bg-dark h2 {
-    color: var(--contact-text);
-}
-
-.bg-dark h2::after {
-    background-color: var(--contact-title-accent);
-}
-
-.text-light p, /* This class will be effectively unused */
-.text-light li {
-    /* color: var(--text-color); */ /* No longer needed */
-}
-
 /* Course Grid */
-.section-subtitle {
-    font-size: 1.2em;
-    color: var(--section-subtitle-color-light);
-    margin-top: -30px;
-    margin-bottom: 50px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 .course-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Slightly larger items */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 35px;
     text-align: left;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Course Section */
-.course-item-highlighted {
-    background: linear-gradient(135deg, #f7b733 0%, #fc4a1a 100%); /* A vibrant orange gradient */
-    color: white; /* Ensure text is readable */
-    border: 2px solid #FFD700; /* Gold border */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* More prominent shadow */
-    transform: scale(1.02); /* Slightly larger */
-}
-
-.course-item-highlighted h3 {
-    color: white; /* Ensure title is readable */
-}
-
-.course-item-highlighted p {
-    color: white; /* Ensure paragraph text is readable */
-}
-
 .course-item {
     padding: 35px;
-    border-radius: 12px; /* More rounded corners */
+    border-radius: 12px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    color: var(--course-item-text-light);
-}
-
-.course-item-1 {
-    background: var(--course-item-bg-light-1);
-}
-
-.course-item-2 {
-    background: linear-gradient(135deg, #e2e2e2 0%, #cfcfcf 100%); /* Light Gray Gradient for the blank one */
-}
-
-.course-item-new-backend {
-    background: linear-gradient(135deg, #f0f0f0 0%, #dcdcdc 100%); /* Another Light Gray/White Gradient */
-}
-
-.course-item-black-text h3,
-.course-item-black-text p {
-    color: #000000 !important; /* Black text for specified items */
-}
-
-.course-item-3 {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* New Purple Gradient */
-}
-
-/* .course-item-4 is handled by .course-item-highlighted */
-
-.course-item-5 {
-    background: linear-gradient(135deg, #10CFBD 0%, #57E2CC 100%); /* New Teal Gradient */
-}
-
-.course-item-6 {
-    background: var(--course-item-bg-light-6);
 }
 
 .course-item:hover {
@@ -306,26 +225,38 @@ nav ul li a.active {
 
 .course-item h3 {
     margin-top: 0;
-    color: var(--course-item-text-light);
+    color: var(--course-item-text);
 }
 
 .course-item p {
     font-size: 0.9em;
     line-height: 1.6;
-    color: var(--course-item-text-light);
+    color: var(--course-item-text);
 }
 
 /* Course Item Specific Backgrounds */
 .course-item-1 {
-    background: var(--course-item-bg-light-1);
+    background: var(--course-item-bg-1);
+}
+
+.course-item-2 {
+    background: var(--course-item-bg-2);
+}
+
+.course-item-3 {
+    background: var(--course-item-bg-3);
 }
 
 .course-item-4 {
-    background: var(--course-item-bg-light-4);
+    background: var(--course-item-bg-4);
+}
+
+.course-item-5 {
+    background: var(--course-item-bg-5);
 }
 
 .course-item-6 {
-    background: var(--course-item-bg-light-6);
+    background: var(--course-item-bg-6);
 }
 
 /* Instructor Section */
@@ -338,7 +269,7 @@ nav ul li a.active {
 }
 
 .instructor-item {
-    background-color: var(--instructor-item-bg-light);
+    background-color: var(--instructor-item-bg);
     padding: 25px;
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
@@ -351,24 +282,24 @@ nav ul li a.active {
 }
 
 .instructor-item img {
-    width: 180px; /* Larger image */
+    width: 180px;
     height: 180px;
     border-radius: 50%;
     margin-bottom: 25px;
     object-fit: cover;
-    border: 5px solid var(--instructor-item-border-light);
+    border: 5px solid var(--instructor-item-border);
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .instructor-item h3 {
     font-size: 1.5em;
     margin-bottom: 10px;
-    color: var(--instructor-text-color-light);
+    color: var(--instructor-text-color);
 }
 
 .instructor-item p {
     font-size: 0.95em;
-    color: var(--instructor-subtext-color-light);
+    color: var(--instructor-subtext-color);
 }
 
 /* Teaching Method */
@@ -390,7 +321,7 @@ nav ul li a.active {
 
 .method-text h3 {
     font-size: 2em;
-    color: var(--method-title-color-light);
+    color: var(--method-title-color);
     margin-bottom: 20px;
 }
 
@@ -400,7 +331,7 @@ nav ul li a.active {
 }
 
 .method-content ul {
-    list-style: none; /* Remove default bullets */
+    list-style: none;
     padding-left: 0;
     margin-top: 20px;
 }
@@ -413,13 +344,113 @@ nav ul li a.active {
 }
 
 .tool-icon {
-    width: 24px; /* Adjust size as needed */
+    width: 24px;
     height: 24px;
     margin-right: 10px;
     vertical-align: middle;
 }
 
+/* Target Audience Section */
+.audience-list {
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-left: 20px;
+}
+
+.audience-list p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    color: var(--text-color);
+    position: relative;
+    padding-left: 25px;
+}
+
+.audience-list p::before {
+    content: "\2713";
+    color: var(--secondary-color);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Testimonial Section */
+.testimonial-slider {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.testimonial-track {
+    display: flex;
+    width: fit-content;
+    animation: scroll-testimonials 30s linear infinite;
+}
+
+.testimonial-item {
+    background-color: var(--instructor-item-bg);
+    border: 1px solid var(--instructor-item-border);
+    border-radius: 12px;
+    padding: 25px;
+    margin: 0 15px;
+    min-width: 300px;
+    max-width: 350px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
+}
+
+.testimonial-item img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    object-fit: cover;
+    border: 3px solid var(--secondary-color);
+}
+
+.testimonial-item p {
+    font-size: 0.95em;
+    color: var(--instructor-subtext-color);
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.testimonial-item h4 {
+    font-size: 1.1em;
+    color: var(--instructor-text-color);
+    margin-top: 10px;
+}
+
+@keyframes scroll-testimonials {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.testimonial-slider:hover .testimonial-track {
+    animation-play-state: paused;
+}
+
 /* Contact Section */
+.contact-section {
+    background-color: var(--contact-bg);
+    color: var(--contact-text);
+}
+
+.contact-section h2 {
+    color: var(--contact-text);
+}
+
+.contact-section h2::after {
+    background-color: var(--contact-title-accent);
+}
+
 .contact-info {
     margin-bottom: 40px;
     font-size: 1.1em;
@@ -440,141 +471,11 @@ nav ul li a.active {
     width: 100%;
     padding: 12px;
     margin-bottom: 15px;
-    border: 1px solid var(--contact-input-border-light);
+    border: 1px solid var(--contact-input-border);
     border-radius: 5px;
-    background-color: var(--contact-input-bg-light);
-    color: var(--contact-input-text-light);
-    box-sizing: border-box;
-}
-
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
-    color: var(--contact-input-placeholder-light);
-}
-
-.contact-form button {
-    width: auto;
-    padding: 12px 25px;
-    background-color: var(--contact-button-bg-light);
-    color: var(--contact-button-text-light);
-    border: none;
-    font-weight: bold;
-    border-radius: 50px;
-    padding: 15px 30px;
-}
-
-.contact-form button:hover {
-    background-color: var(--contact-button-hover-bg-light);
-    color: var(--contact-button-text-light);
-    transform: translateY(-2px);
-}
-
-/* Footer */
-footer {
-    background-color: var(--footer-bg-light);
-    color: var(--footer-text-light);
-    text-align: center;
-    padding: 30px 20px;
-    font-size: 0.9em;
-}
-
-/* Add more specific styles as needed */
-
-/* Lazy Load Image Styles */
-img.lazy-load {
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-    min-height: 100px; /* Placeholder height, adjust as needed */
-    background-color: #f0f0f0; /* Light gray placeholder background */
-}
-
-img:not(.lazy-load) {
-    opacity: 1;
-}
-
-/* Theme Toggle Button styles removed as theme toggle is being removed */
-
-/* Dark Mode Styles removed as we are implementing a single dark blue/yellow theme */
-
-/* Ensure specific items use the new theme variables correctly */
-.course-item-1 {
-    background: var(--course-item-bg-1);
-}
-.course-item-2 { /* This was the blank one, style it with a neutral dark blue */
-    background: var(--course-item-bg-2);
-}
-.course-item-new-backend { /* Style with a neutral dark blue */
-    background: var(--course-item-bg-2); /* Re-use for consistency or define a new one if needed */
-}
-.course-item-black-text h3,
-.course-item-black-text p {
-    color: var(--course-item-text) !important; /* Should use the general text color for course items */
-}
-.course-item-3 {
-    background: var(--course-item-bg-3);
-}
-.course-item-highlighted, /* This was course-item-4 */
-.course-item-4 { 
-    background: var(--course-item-bg-4);
-    color: var(--course-item-highlighted-text);
-}
-.course-item-highlighted h3,
-.course-item-highlighted p,
-.course-item-4 h3,
-.course-item-4 p {
-    color: var(--course-item-highlighted-text);
-}
-.course-item-5 {
-    background: var(--course-item-bg-5);
-}
-.course-item-6 {
-    background: var(--course-item-bg-6);
-}
-
-.course-item h3,
-.course-item p {
-    color: var(--course-item-text); /* Ensure all course item text uses the correct variable */
-}
-
-.instructor-item {
-    background-color: var(--instructor-item-bg);
-}
-
-.instructor-item img {
-    border-color: var(--instructor-item-border);
-}
-
-.instructor-item h3 {
-    color: var(--instructor-text-color);
-}
-
-.instructor-item p {
-    color: var(--instructor-subtext-color);
-}
-
-.method-text h3 {
-    color: var(--method-title-color);
-}
-
-/* Contact Section specific styling with new variables */
-.contact-section { /* Assuming .bg-dark was primarily for contact section */
-    background-color: var(--contact-bg);
-    color: var(--contact-text);
-}
-
-.contact-section h2 {
-    color: var(--contact-text);
-}
-
-.contact-section h2::after {
-    background-color: var(--contact-title-accent);
-}
-
-.contact-form input,
-.contact-form textarea {
     background-color: var(--contact-input-bg);
-    border-color: var(--contact-input-border);
     color: var(--contact-input-text);
+    box-sizing: border-box;
 }
 
 .contact-form input::placeholder,
@@ -583,18 +484,29 @@ img:not(.lazy-load) {
 }
 
 .contact-form button {
+    width: auto;
+    padding: 12px 25px;
     background-color: var(--contact-button-bg);
     color: var(--contact-button-text);
+    border: none;
+    font-weight: bold;
+    border-radius: 50px;
+    padding: 15px 30px;
 }
 
 .contact-form button:hover {
     background-color: var(--contact-button-hover-bg);
-    color: var(--contact-button-text); /* Ensure text color remains on hover */
+    color: var(--contact-button-text);
+    transform: translateY(-2px);
 }
 
+/* Footer */
 footer {
     background-color: var(--footer-bg);
     color: var(--footer-text);
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 0.9em;
 }
 
 /* Responsive Design */
@@ -602,11 +514,11 @@ footer {
     header nav ul {
         flex-direction: column;
         align-items: center;
-        display: none; /* Initially hide for hamburger menu, if implemented */
+        display: none;
     }
 
     header nav ul.active {
-        display: flex; /* Show when active */
+        display: flex;
     }
 
     header nav ul li {
@@ -640,25 +552,9 @@ footer {
 
     .contact-form input,
     .contact-form textarea {
-        width: 100%; /* Full width, padding included in box-sizing */
+        width: 100%;
         box-sizing: border-box;
     }
-}
-
-/* Scroll Animation Visibility */
-.course-item,
-.instructor-item,
-.method-content > * {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.course-item.visible,
-.instructor-item.visible,
-.method-content > *.visible {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 @media (max-width: 480px) {
@@ -672,4 +568,85 @@ footer {
     .instructor-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* Payment Methods Section Specific Styles */
+.payment-methods {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.05); /* Subtle background for the section */
+    border-radius: 8px;
+}
+
+.payment-methods h3 {
+    color: var(--section-title-color);
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+.payment-methods ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px; /* Add some space above the list if payment-info is present */
+}
+
+.payment-methods ul li {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    transition: transform 0.2s ease;
+}
+
+.payment-methods ul li:hover {
+    transform: translateY(-2px);
+}
+
+.payment-info {
+    margin-bottom: 30px;
+    text-align: left;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.payment-info h4 {
+    color: var(--secondary-color);
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.payment-info p {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.bank-info {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.bank-info td {
+    padding: 10px;
+    border: 1px solid var(--primary-color);
+    font-size: 1em;
+}
+
+.bank-info tr td:first-child {
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.08);
+    width: 30%;
+}
+
+.payment-info .note {
+    font-style: italic;
+    color: var(--section-subtitle-color);
+    font-size: 1em;
 }
