@@ -91,7 +91,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    padding: 10px 5%;
+    padding: 8px 5%; /* Reduced padding */
 }
 
 nav {
@@ -116,7 +116,7 @@ nav ul {
 }
 
 nav ul li {
-    margin-left: 25px;
+    margin-left: 20px; /* Reduced margin */
 }
 
 nav ul li a {
@@ -135,23 +135,23 @@ nav ul li a.active {
 .hero-section {
     background: var(--hero-bg);
     color: var(--hero-text);
-    padding: 80px 20px;
+    padding: 60px 20px; /* Reduced padding */
     text-align: center;
     position: relative;
     overflow: hidden;
 }
 
 .hero-content h1 {
-    font-size: 3.8em;
-    margin-bottom: 25px;
+    font-size: 3.5em; /* Slightly reduced font size */
+    margin-bottom: 20px; /* Reduced margin */
     font-weight: 700;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
 }
 
 .hero-content p {
-    font-size: 1.6em;
-    margin-bottom: 35px;
-    max-width: 700px;
+    font-size: 1.4em; /* Slightly reduced font size */
+    margin-bottom: 30px; /* Reduced margin */
+    max-width: 650px; /* Slightly reduced max-width */
     margin-left: auto;
     margin-right: auto;
     color: var(--hero-text);
@@ -161,9 +161,9 @@ nav ul li a.active {
     display: inline-block;
     background-color: var(--cta-bg);
     color: var(--cta-text);
-    padding: 18px 35px;
+    padding: 15px 30px; /* Reduced padding */
     border-radius: 50px;
-    font-size: 1.2em;
+    font-size: 1.1em; /* Slightly reduced font size */
     font-weight: bold;
     transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
     border: none;
@@ -177,44 +177,124 @@ nav ul li a.active {
     color: var(--cta-hover-text);
 }
 
-/* Content Sections */
-.content-section {
-    padding: 80px 5%;
+/* Featured Courses Section */
+#featured-courses {
+    background-color: var(--background-color); /* Or a slightly different shade if desired */
+    text-align: center; /* Ensure section titles and subtitles are centered */
+    padding-top: 30px; /* Add some padding to the top */
+    padding-bottom: 30px; /* Add some padding to the bottom */
+}
+
+#featured-courses h2 {
     text-align: center;
-}
-
-.content-section h2 {
-    font-size: 2.8em;
-    margin-bottom: 50px;
+    font-size: 2.5em; /* Adjust as needed */
     color: var(--section-title-color);
-    position: relative;
-    display: inline-block;
+    margin-bottom: 10px;
 }
 
-.content-section h2::after {
-    content: '';
-    display: block;
-    width: 80px;
-    height: 5px;
-    background-color: var(--section-title-accent);
-    margin: 15px auto 0;
-    border-radius: 2px;
+#featured-courses > p { /* Target the direct p child for the subtitle */
+    text-align: center;
+    font-size: 1.1em; /* Adjust as needed */
+    color: var(--section-subtitle-color);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px;
 }
 
-/* Course Grid */
+.featured-course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Aim for two prominent blocks */
+    gap: 25px; /* Slightly larger gap for emphasis */
+    margin-top: 30px;
+}
+
+.course-item-featured {
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left; /* Keep course item text left-aligned */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.course-item-featured:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.course-item-featured h3 {
+    font-size: 1.8em;
+    color: var(--course-item-text);
+    margin-bottom: 15px;
+}
+
+.course-item-featured p {
+    font-size: 1em;
+    color: var(--course-item-text);
+    flex-grow: 1;
+    margin-bottom: 20px;
+}
+
+/* Specific styles for beginner and advanced featured courses */
+.course-item-beginner {
+    background: linear-gradient(135deg, #FF8C8C 0%, #FF6060 100%); /* A distinct red/pink shade */
+    color: #FFFFFF; /* White text for better contrast */
+}
+
+.course-item-beginner h3,
+.course-item-beginner p {
+    color: #FFFFFF;
+}
+
+.course-item-advanced {
+    background: linear-gradient(135deg, #6BB2FF 0%, #4080FF 100%); /* A distinct blue shade */
+    color: #FFFFFF; /* White text for better contrast */
+}
+
+.course-item-advanced h3,
+.course-item-advanced p {
+    color: #FFFFFF;
+}
+
+/* Course Content Section General Styles */
+#course-content {
+    padding-top: 30px; /* Add some padding to the top */
+    padding-bottom: 40px; /* Add some padding to the bottom */
+}
+
+#course-content h2 {
+    text-align: center;
+    font-size: 2.5em; /* Consistent with featured courses */
+    color: var(--section-title-color);
+    margin-bottom: 10px;
+}
+
+#course-content > p.section-subtitle {
+    text-align: center;
+    font-size: 1.1em; /* Consistent with featured courses */
+    color: var(--section-subtitle-color);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px; /* Slightly more margin before the grid */
+}
+
 .course-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 35px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjusted minmax */
+    gap: 30px; /* Reduced gap */
     text-align: left;
-    max-width: 1200px;
+    max-width: 1100px; /* Slightly reduced max-width */
     margin: 0 auto;
 }
 
 .course-item {
-    padding: 35px;
-    border-radius: 12px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    padding: 30px; /* Reduced padding */
+    border-radius: 10px; /* Slightly reduced border-radius */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -259,20 +339,25 @@ nav ul li a.active {
     background: var(--course-item-bg-6);
 }
 
-/* Instructor Section */
+/* Instructors Section */
+#instructors {
+    background-color: var(--instructor-bg, #001E3C); /* Fallback color */
+    text-align: center; /* Center align text content */
+}
+
 .instructor-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 40px;
-    max-width: 1000px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* Adjusted minmax */
+    gap: 30px; /* Reduced gap */
+    max-width: 900px; /* Slightly reduced max-width */
     margin: 0 auto;
 }
 
 .instructor-item {
     background-color: var(--instructor-item-bg);
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
+    padding: 20px; /* Reduced padding */
+    border-radius: 10px; /* Slightly reduced border-radius */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -282,18 +367,18 @@ nav ul li a.active {
 }
 
 .instructor-item img {
-    width: 180px;
-    height: 180px;
+    width: 160px; /* Reduced size */
+    height: 160px; /* Reduced size */
     border-radius: 50%;
-    margin-bottom: 25px;
+    margin-bottom: 20px; /* Reduced margin */
     object-fit: cover;
-    border: 5px solid var(--instructor-item-border);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border: 4px solid var(--instructor-item-border); /* Slightly reduced border */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
 .instructor-item h3 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
+    font-size: 1.4em; /* Slightly reduced font size */
+    margin-bottom: 8px; /* Reduced margin */
     color: var(--instructor-text-color);
 }
 
@@ -303,84 +388,163 @@ nav ul li a.active {
 }
 
 /* Teaching Method */
+#teaching-method h2,
+#teaching-method > .section-subtitle {
+    text-align: center;
+}
+
 .method-content {
     display: flex;
-    align-items: center;
-    gap: 40px;
+    align-items: center; /* Vertically align items if they have different heights */
+    gap: 30px;
     text-align: left;
-    max-width: 1100px;
+    max-width: 1100px; /* Increased max-width to accommodate more content */
     margin: 0 auto;
 }
 
-.method-image {
+.method-text {
+    flex: 1; /* Allow text to take available space */
+}
+
+.method-images-container {
+    display: flex;
+    flex-direction: column; /* Stack images vertically by default, or row for side-by-side */
+    gap: 15px; /* Gap between the two images */
     flex-shrink: 0;
+    /* max-width: 45%; /* Adjust as needed, consider the overall layout */
+}
+
+.method-image {
     border-radius: 12px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-    max-width: 45%;
+    width: 100%; /* Make images take full width of their container */
+    max-width: 350px; /* Max width for each image, adjust as needed */
+    height: auto;
+    display: block; /* Remove margin auto if flex is handling alignment */
+    /* margin-left: auto; /* Removed for flex alignment */
+    /* margin-right: auto; /* Removed for flex alignment */
+}
+
+.existing-method-image {
+    /* Specific styles for the first image if needed */
+}
+
+.new-method-image {
+    /* Specific styles for the new image if needed */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .method-content {
+        flex-direction: column; /* Stack text and images vertically */
+        text-align: center; /* Center text when stacked */
+    }
+
+    .method-images-container {
+        flex-direction: row; /* Images side-by-side on smaller screens if desired */
+        justify-content: center; /* Center images when in a row */
+        align-items: center;
+        margin-top: 20px;
+        max-width: 100%; /* Allow image container to take full width */
+    }
+
+    .method-image {
+        max-width: 48%; /* Adjust for side-by-side on mobile, or 100% for stacked */
+    }
+}
+
+@media (max-width: 480px) {
+    .method-images-container {
+        flex-direction: column; /* Stack images vertically on very small screens */
+        align-items: center;
+    }
+    .method-image {
+        max-width: 80%; /* Larger when stacked vertically on small screens */
+    }
 }
 
 .method-text h3 {
-    font-size: 2em;
+    font-size: 1.8em; /* Slightly reduced font size */
     color: var(--method-title-color);
-    margin-bottom: 20px;
+    margin-bottom: 15px; /* Reduced margin */
 }
 
 .method-text p {
-    font-size: 1.1em;
-    margin-bottom: 20px;
+    font-size: 1em; /* Slightly reduced font size */
+    margin-bottom: 15px; /* Reduced margin */
 }
 
 .method-content ul {
     list-style: none;
     padding-left: 0;
-    margin-top: 20px;
+    margin-top: 15px; /* Reduced margin */
 }
 
 .method-content ul li {
-    margin-bottom: 12px;
-    font-size: 1.05em;
+    margin-bottom: 10px; /* Reduced margin */
     display: flex;
     align-items: center;
+    font-size: 1em; /* Slightly reduced font size */
+}
+
+.custom-bullet {
+    color: var(--highlight-color, #ffc107); /* Use highlight color or a default yellow */
+    margin-right: 10px; /* Space between bullet and text, similar to icon spacing */
+    font-size: 1.2em; /* Make the checkmark slightly larger if needed */
+    line-height: 1; /* Ensure proper vertical alignment */
 }
 
 .tool-icon {
-    width: 24px;
+    width: 24px; /* Consistent icon size */
     height: 24px;
     margin-right: 10px;
-    vertical-align: middle;
+    vertical-align: middle; /* Align icons with text */
 }
 
-/* Target Audience Section */
+#target-audience h2,
+#target-audience > .section-subtitle {
+    text-align: center;
+}
+
 .audience-list {
-    text-align: left;
-    max-width: 800px;
-    margin: 0 auto;
-    padding-left: 20px;
+    /* text-align: left; */ /* Removed to allow centering of the block itself */
+    max-width: 750px;
+    margin: 0 auto; /* Center the block */
+    /* padding-left: 15px; */ /* Remove or adjust if text-align:center on parent is used */
 }
 
-.audience-list p {
-    font-size: 1.1em;
-    margin-bottom: 15px;
-    color: var(--text-color);
-    position: relative;
-    padding-left: 25px;
+#target-audience .audience-list p {
+    background-color: transparent;
+    padding: 10px 0px 10px 30px; 
+    margin-bottom: 8px;
+    border-radius: var(--border-radius-small);
+    position: relative; 
+    font-size: 1em;
+    color: var(--text-color-light);
+    text-align: left; /* Ensure text within each item is left-aligned */
 }
 
-.audience-list p::before {
-    content: "\2713";
-    color: var(--secondary-color);
-    font-weight: bold;
+#target-audience .audience-list p::before {
+    content: "✔"; /* Checkmark character */
+    color: var(--highlight-color, #ffc107); /* Highlight color for the checkmark */
     position: absolute;
-    left: 0;
-    top: 0;
+    left: 10px; /* Position checkmark to the left */
+    top: 50%;
+    transform: translateY(-50%); /* Vertically center the checkmark */
+    font-weight: bold;
+    font-size: 1.1em;
 }
 
 /* Testimonial Section */
+#testimonials h2 {
+    text-align: center;
+}
+
 .testimonial-slider {
     overflow: hidden;
     position: relative;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1100px; /* Slightly reduced max-width */
     margin: 0 auto;
 }
 
@@ -393,35 +557,35 @@ nav ul li a.active {
 .testimonial-item {
     background-color: var(--instructor-item-bg);
     border: 1px solid var(--instructor-item-border);
-    border-radius: 12px;
-    padding: 25px;
-    margin: 0 15px;
-    min-width: 300px;
-    max-width: 350px;
+    border-radius: 10px; /* Slightly reduced border-radius */
+    padding: 25px; /* Reduced padding */
+    margin: 0 15px; /* Reduced margin */
+    min-width: 300px; /* Slightly reduced min-width */
+    max-width: 360px; /* Slightly reduced max-width */
     text-align: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
 .testimonial-item img {
-    width: 100px;
-    height: 100px;
+    width: 100px; /* Reduced size */
+    height: 100px; /* Reduced size */
     border-radius: 50%;
-    margin-bottom: 15px;
-    object-fit: cover;
-    border: 3px solid var(--secondary-color);
+    margin-bottom: 15px; /* Reduced margin */
+    object-fit: contain; /* Changed from cover to contain */
+    border: 3px solid var(--secondary-color); /* Slightly reduced border */
 }
 
 .testimonial-item p {
-    font-size: 0.95em;
+    font-size: 0.9em; /* Slightly reduced font size */
     color: var(--instructor-subtext-color);
-    margin-bottom: 10px;
+    margin-bottom: 8px; /* Reduced margin */
     font-style: italic;
 }
 
 .testimonial-item h4 {
-    font-size: 1.1em;
+    font-size: 1em; /* Slightly reduced font size */
     color: var(--instructor-text-color);
-    margin-top: 10px;
+    margin-top: 8px; /* Reduced margin */
 }
 
 @keyframes scroll-testimonials {
@@ -438,30 +602,66 @@ nav ul li a.active {
 }
 
 /* Contact Section */
-.contact-section {
-    background-color: var(--contact-bg);
-    color: var(--contact-text);
+#contact .content-section h2, /* More specific selector for the main title if needed */
+#contact .content-section > p { /* More specific selector for the main subtitle if needed */
+    text-align: center; /* General centering for the section's main title/subtitle */
 }
 
-.contact-section h2 {
-    color: var(--contact-text);
+.contact-container {
+    display: flex;
+    align-items: center; /* Vertically align items */
+    gap: 30px; /* Space between text and image */
+    max-width: 1100px; /* Adjust as needed */
+    margin: 40px auto; /* Center the container and add some vertical margin */
+    padding: 20px; /* Add some padding inside the container */
 }
 
-.contact-section h2::after {
-    background-color: var(--contact-title-accent);
+.contact-text-content {
+    flex: 1.2; /* Give a bit more space to text content */
+    text-align: left; /* Ensure text inside is left-aligned */
+}
+
+/* Ensure the h2 and p within contact-text-content are left-aligned, overriding broader rules */
+.contact-text-content #contact-title,
+.contact-text-content > p {
+    text-align: left !important; /* Use !important if necessary to override */
+    margin-bottom: 15px;
+}
+
+.contact-image-container {
+    flex: 0.8; /* Adjust image container flex-basis */
+    max-width: 40%; /* Adjust image width */
+    display: flex; /* For centering image if it's smaller than container */
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-image-container img {
+    width: 100%;
+    max-width: 400px; /* Max width for the image itself */
+    height: auto;
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .contact-info {
-    margin-bottom: 40px;
-    font-size: 1.1em;
+    text-align: left; 
+    margin-bottom: 25px;
 }
 
-.contact-info p {
-    margin-bottom: 10px;
+.contact-form input,
+.contact-form textarea {
+    margin-bottom: 15px; /* Adjust spacing for form elements */
+}
+
+.contact-form .cta-button {
+    display: block; /* Make button block to allow margin auto for centering if needed */
+    margin-top: 10px;
+    /* text-align: left; /* Or keep it left if preferred */
 }
 
 .contact-form {
-    max-width: 600px;
+    max-width: 550px; /* Slightly reduced max-width */
     margin: 0 auto;
     text-align: left;
 }
@@ -469,10 +669,10 @@ nav ul li a.active {
 .contact-form input,
 .contact-form textarea {
     width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
+    padding: 10px; /* Reduced padding */
+    margin-bottom: 12px; /* Reduced margin */
     border: 1px solid var(--contact-input-border);
-    border-radius: 5px;
+    border-radius: 4px; /* Slightly reduced border-radius */
     background-color: var(--contact-input-bg);
     color: var(--contact-input-text);
     box-sizing: border-box;
@@ -485,13 +685,12 @@ nav ul li a.active {
 
 .contact-form button {
     width: auto;
-    padding: 12px 25px;
+    padding: 10px 20px; /* Reduced padding */
     background-color: var(--contact-button-bg);
     color: var(--contact-button-text);
     border: none;
     font-weight: bold;
     border-radius: 50px;
-    padding: 15px 30px;
 }
 
 .contact-form button:hover {
@@ -505,72 +704,16 @@ footer {
     background-color: var(--footer-bg);
     color: var(--footer-text);
     text-align: center;
-    padding: 30px 20px;
-    font-size: 0.9em;
+    padding: 15px 5%; /* Reduced padding */
+    margin-top: 40px; /* Reduced margin */
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    header nav ul {
-        flex-direction: column;
-        align-items: center;
-        display: none;
-    }
-
-    header nav ul.active {
-        display: flex;
-    }
-
-    header nav ul li {
-        margin: 10px 0;
-    }
-
-    .hero-section {
-        padding: 60px 20px;
-    }
-
-    .hero-content h1 {
-        font-size: 2.5em;
-    }
-
-    .course-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .instructor-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .method-content {
-        flex-direction: column;
-    }
-
-    .method-image {
-        margin-top: 20px;
-        max-width: 100%;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-        width: 100%;
-        box-sizing: border-box;
-    }
+.contact-info .note {
+    font-style: italic;
+    color: var(--section-subtitle-color);
+    font-size: 1em;
 }
 
-@media (max-width: 480px) {
-    .hero-content h1 {
-        font-size: 2em;
-    }
-    .content-section h2 {
-        font-size: 1.8em;
-    }
-    .course-grid,
-    .instructor-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Payment Methods Section Specific Styles */
 .payment-methods {
     margin-top: 40px;
     padding: 20px;
